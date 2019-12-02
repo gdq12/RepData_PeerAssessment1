@@ -14,9 +14,8 @@ library(dplyr)
 library(ggplot2)
 library(knitr)
 library(kableExtra)
+opts_chunk$set(fig.path = "./figure/")
 ```
-
-
 
 2. import activity.csv and data frame formatting
 
@@ -54,8 +53,9 @@ hist(sumSteps$tSteps, breaks=50, main="Total daily step count frequency October-
 ```r
 #mean & median calculation 
 mmStep <- cbind(Mean=mean(sumSteps$tSteps, na.rm=T), Median=median(sumSteps$tSteps, na.rm=T) )
+#results printed in table 
+kable(mmStep) %>% kable_styling(bootstrap_options="striped", full_width=F, position="left")
 ```
-
 
 <table class="table table-striped" style="width: auto !important; ">
  <thead>
@@ -95,6 +95,10 @@ print(gInterval)
 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
 
+```r
+#subset row with maximum step number with corresponding 5-min interval
+maxInterval <- mInterval[mInterval$mStep == max(mInterval$mStep), ]
+```
 
 
 The 5-min interval with the maximum number of steps (206.1698113) is **835**.
@@ -141,6 +145,17 @@ hist(sumSteps2$tSteps, breaks=50, main="Total daily step count frequency October
 ```
 
 ![plot of chunk stepSum2](./figure/stepSum2-1.png)
+
+```r
+#calculate mean & median w/ & w/o NAs
+sumStepsMean <- mean(sumSteps$tSteps, na.rm=T)
+sumStepsMedian <- median(sumSteps$tSteps, na.rm=T)
+sumStepsMean2 <- mean(sumSteps2$tSteps)
+sumStepsMedian2 <- median(sumSteps2$tSteps)
+#create and report table of values 
+mmSteps2 <- cbind(c("w/NAs", "w/o NAs"), Means=c(sumStepsMean, sumStepsMean2), Medians=c(sumStepsMedian, sumStepsMedian2))
+kable(mmSteps2) %>% kable_styling(bootstrap_options="striped", full_width=F, position="left")
+```
 
 <table class="table table-striped" style="width: auto !important; ">
  <thead>
