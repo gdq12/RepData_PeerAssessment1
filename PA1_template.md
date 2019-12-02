@@ -1,5 +1,5 @@
 Reproducible Research: Peer Assessment1
-========================================
+=======================================
 ________________________________________
 
 ## Loading and preprocessing the data
@@ -163,6 +163,8 @@ hist(sumSteps2$tSteps, breaks=50, main="Total daily step count frequency October
   </tr>
 </tbody>
 </table>
+
+**According to the table above, there is no drastic impact on mean or median when comparing mean and median with NAs vs. filling in NAs.**
 
 _________________________________________________________________________
 

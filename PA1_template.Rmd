@@ -1,5 +1,5 @@
 Reproducible Research: Peer Assessment1
-========================================
+=======================================
 ________________________________________
 
 ## Loading and preprocessing the data
@@ -132,6 +132,8 @@ sumStepsMedian2 <- median(sumSteps2$tSteps)
 mmSteps2 <- cbind(c("w/NAs", "w/o NAs"), Means=c(sumStepsMean, sumStepsMean2), Medians=c(sumStepsMedian, sumStepsMedian2))
 kable(mmSteps2) %>% kable_styling(bootstrap_options="striped", full_width=F, position="left")
 ```
+
+**According to the table above, there is no drastic impact on mean or median when comparing mean and median with NAs vs. filling in NAs.**
 
 _________________________________________________________________________
 
