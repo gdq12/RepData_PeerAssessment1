@@ -15,6 +15,10 @@ library(knitr)
 library(kableExtra)
 ```
 
+```{r figsDir, echo=FALSE}
+opts_chunk$set(fig.path = "./figure/")
+```
+
 2. import activity.csv and data frame formatting
 
 ``` {r dataFrame, results="hide"}
