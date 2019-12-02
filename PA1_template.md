@@ -2,7 +2,7 @@ Reproducible Research: Peer Assessment1
 ========================================
 ________________________________________
 
-#Loading and preprocessing the data
+##Loading and preprocessing the data
 
 ___________________________________
 1. load necessary packages
@@ -31,7 +31,7 @@ activity$steps <- as.numeric(activity$steps)
 ```
 __________________________________________________
 
-#What is mean total number of steps taken per day?
+##What is mean total number of steps taken per day?
 
 __________________________________________________
 *ignored missing values in dataset*
@@ -74,7 +74,7 @@ mmStep <- cbind(Mean=mean(sumSteps$tSteps, na.rm=T), Median=median(sumSteps$tSte
 
 ____________________________________________
 
-#What is the average daily activity pattern?
+##What is the average daily activity pattern?
 
 ____________________________________________
 
@@ -101,7 +101,7 @@ The 5-min interval with the maximum number of steps (206.1698113) is **835**.
 
 _________________________
 
-#Imputting missing values
+##Imputting missing values
 
 _________________________
 
@@ -166,7 +166,7 @@ hist(sumSteps2$tSteps, breaks=50, main="Total daily step count frequency October
 
 _________________________________________________________________________
 
-#Are there differences in activity patterns between weekdays and weekends?
+##Are there differences in activity patterns between weekdays and weekends?
 
 _________________________________________________________________________
 
